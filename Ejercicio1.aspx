@@ -61,11 +61,8 @@
                     <td>&nbsp;</td>
                     <td class="auto-style2"><b><u>PROVINCIA:</u></b></td>
                     <td>
-                        <asp:DropDownList ID="ddlProvincias" runat="server">
-                            <asp:ListItem>--seleccionar--</asp:ListItem>
-                            <asp:ListItem>Buenos Aires</asp:ListItem>
-                            <asp:ListItem>Entre Rios</asp:ListItem>
-                            <asp:ListItem>Santa Fe</asp:ListItem>
+                        <asp:DropDownList ID="ddlProvinciasInicio" runat="server" AutoPostback = "true"
+                            OnSelectedIndexChanged="ddlProvinciasInicio_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -77,7 +74,10 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td class="auto-style2"><b><u>LOCALIDAD:</u></b></td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:DropDownList ID="ddlLocalidadesInicio" runat="server">
+                        </asp:DropDownList>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

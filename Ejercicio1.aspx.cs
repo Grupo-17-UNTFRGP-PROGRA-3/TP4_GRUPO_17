@@ -11,8 +11,9 @@ namespace TP4_GRUPO_17
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=DESKTOP-7N6K8KD\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
+        private const string cadenaConexion = @"Data Source=PC\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
         private string consultaSQLProvincias = "SELECT * FROM Provincias";
+        private string consultaSQLLocalidades = "SELECT IdLocalidad, NombreLocalidad FROM Localidades WHERE IdProvincia = @IdProvincia";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,13 +27,42 @@ namespace TP4_GRUPO_17
                 DataSet dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet, "TablaProvincias");
 
-                ddlProvincias.DataSource = dataSet.Tables["TablaProvincias"];
-                ddlProvincias.DataTextField = "NombreProvincia";
-                ddlProvincias.DataValueField = "IdProvincia";
-                ddlProvincias.DataBind();
+                ddlProvinciasInicio.DataTextField = "NombreProvincia";
+                ddlProvinciasInicio.DataSource = dataSet.Tables["TablaProvincias"];
+                ddlProvinciasInicio.DataValueField = "IdProvincia";
+                ddlProvinciasInicio.DataBind();
 
                 connection.Close();
+
+                ActualizarLocalidadesInicio();
             }
+        }
+
+        protected void ddlProvinciasInicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActualizarLocalidadesInicio();
+        }
+
+        private void ActualizarLocalidadesInicio()
+        {
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(consultaSQLLocalidades, connection);
+            command.Parameters.Add("@IdProvincia", SqlDbType.Int);
+            command.Parameters["@IdProvincia"].Value = ddlProvinciasInicio.SelectedValue;
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet, "TablaLocalidades");
+
+            ddlLocalidadesInicio.DataTextField = "NombreLocalidad";
+            ddlLocalidadesInicio.DataSource = dataSet.Tables["TablaLocalidades"];
+            ddlLocalidadesInicio.DataValueField = "IdLocalidad";
+            ddlLocalidadesInicio.DataBind();
+
+            connection.Close();
         }
     }
 }
