@@ -10,6 +10,21 @@
         .auto-style1 {
             width: 100%;
         }
+        .auto-style2 {
+            width: 24px;
+        }
+        .auto-style3 {
+            width: 80px;
+        }
+        .auto-style6 {
+            width: 18px;
+        }
+        .auto-style7 {
+            width: 16px;
+        }
+        .auto-style8 {
+            width: 83px;
+        }
     </style>
 </head>
 <body>
@@ -25,81 +40,89 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">Id Producto:</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:DropDownList ID="ddlProducto" runat="server">
+                            <asp:ListItem Value="==">Igual a:</asp:ListItem>
+                            <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
+                            <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="txtProducto" runat="server" Width="170px"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
