@@ -27,8 +27,8 @@ namespace TP4_GRUPO_17
                 DataSet dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet, "TablaProvincias");
 
-                ddlProvinciasInicio.DataTextField = "NombreProvincia";
                 ddlProvinciasInicio.DataSource = dataSet.Tables["TablaProvincias"];
+                ddlProvinciasInicio.DataTextField = "NombreProvincia";
                 ddlProvinciasInicio.DataValueField = "IdProvincia";
                 ddlProvinciasInicio.DataBind();
 
@@ -57,8 +57,8 @@ namespace TP4_GRUPO_17
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet, "TablaLocalidades");
 
-            ddlLocalidadesInicio.DataTextField = "NombreLocalidad";
             ddlLocalidadesInicio.DataSource = dataSet.Tables["TablaLocalidades"];
+            ddlLocalidadesInicio.DataTextField = "NombreLocalidad";
             ddlLocalidadesInicio.DataValueField = "IdLocalidad";
             ddlLocalidadesInicio.DataBind();
 
