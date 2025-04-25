@@ -82,14 +82,14 @@
                         Id Producto:</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style10">
-                        <asp:DropDownList ID="ddlProducto" runat="server">
+                        <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="True">
                             <asp:ListItem Value="==">Igual a:</asp:ListItem>
                             <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
                             <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtProducto" runat="server" Width="170px"></asp:TextBox>
+                        <asp:TextBox ID="txtProducto" runat="server" Width="170px" TextMode="Number"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -126,7 +126,7 @@
                     <td class="auto-style17"></td>
                     <td class="auto-style14"></td>
                     <td class="auto-style15">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </td>
                     <td class="auto-style16">
