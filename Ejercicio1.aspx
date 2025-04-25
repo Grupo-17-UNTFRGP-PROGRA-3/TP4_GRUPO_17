@@ -147,7 +147,7 @@
                     <td></td>
                     <td>&nbsp;<b>LOCALIDAD:</b></td>
                     <td>
-                        <asp:DropDownList ID="ddlLocalidadesDestino" runat="server">
+                        <asp:DropDownList ID="ddlLocalidadesDestino" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td></td>

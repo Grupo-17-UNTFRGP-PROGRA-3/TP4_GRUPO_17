@@ -38,6 +38,7 @@ namespace TP4_GRUPO_17
 
                 ActualizarLocalidadesInicio();
                 ActualizarProvinciasDestino();
+                ActualizarLocalidadesDestino();
                
 
             }
@@ -90,13 +91,35 @@ namespace TP4_GRUPO_17
                     ddlProvinciasDestino.Items[ddlProvinciasDestino.Items.Count - 1].Value = row["IdProvincia"].ToString();
                 }
             }
+            ActualizarLocalidadesDestino();
             connection.Close();
         }
-        
+        private void ActualizarLocalidadesDestino()
+        {
+            ddlLocalidadesDestino.Items.Clear();
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(consultaSQLLocalidades, connection);
+            command.Parameters.Add("@IdProvincia", SqlDbType.Int);
+            command.Parameters["@IdProvincia"].Value = ddlProvinciasDestino.SelectedValue;
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet, "TablaLocalidades");
+
+            ddlLocalidadesDestino.DataSource = dataSet.Tables["TablaLocalidades"];
+            ddlLocalidadesDestino.DataTextField = "NombreLocalidad";
+            ddlLocalidadesDestino.DataValueField = "IdLocalidad";
+            ddlLocalidadesDestino.DataBind();
+
+            connection.Close();
+        }
 
         protected void ddlProvinciasDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+            ActualizarLocalidadesDestino();
         }
     }
 }
