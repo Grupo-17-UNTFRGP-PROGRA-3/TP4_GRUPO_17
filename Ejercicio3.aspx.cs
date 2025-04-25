@@ -10,7 +10,7 @@ namespace TP4_GRUPO_17
 {
     public partial class Ejercicio3 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=DESKTOP-7N6K8KD\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;Encrypt=False";
+        private const string cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;Encrypt=False";
         private string consultaSQL = "SELECT * FROM Temas";
         protected void Page_Load(object sender, EventArgs e)
         {
