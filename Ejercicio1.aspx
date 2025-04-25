@@ -134,10 +134,10 @@
                     <td></td>
                     <td>&nbsp;<b>PROVINCIA:</b></td>
                     <td>
-                        <asp:DropDownList ID="ddlProvinciasDestino" runat="server">
+                        <asp:DropDownList ID="ddlProvinciasDestino" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciasDestino_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td></td>
                     <td></td>
                     <td></td>
