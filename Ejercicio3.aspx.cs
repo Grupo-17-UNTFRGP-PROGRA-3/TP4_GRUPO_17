@@ -10,8 +10,10 @@ namespace TP4_GRUPO_17
 {
     public partial class Ejercicio3 : System.Web.UI.Page
     {
-        private const string cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;Encrypt=False";
+        //private const string cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;Encrypt=False";
+        public const string cadenaConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=Libreria;Integrated Security=True";
         private string consultaSQL = "SELECT * FROM Temas";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,6 +32,11 @@ namespace TP4_GRUPO_17
 
                 connection.Close();
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Ejercicio3_b.aspx?");
         }
     }
 }

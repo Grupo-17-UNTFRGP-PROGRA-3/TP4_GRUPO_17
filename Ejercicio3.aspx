@@ -22,6 +22,25 @@
         .auto-style5 {
             width: 127px;
         }
+        .auto-style6 {
+            width: 16px;
+            height: 23px;
+        }
+        .auto-style7 {
+            width: 111px;
+            height: 23px;
+        }
+        .auto-style8 {
+            width: 18px;
+            height: 23px;
+        }
+        .auto-style9 {
+            width: 127px;
+            height: 23px;
+        }
+        .auto-style10 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +80,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp; <a href="Ejercicio3_b.aspx">Ver Temas</a></td>
+                    <td class="auto-style3">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Ver Temas</asp:LinkButton>
+                    </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -80,14 +101,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style10"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
