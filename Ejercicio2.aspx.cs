@@ -33,54 +33,97 @@ namespace TP4_GRUPO_17
 
         }
 
-        protected void btnFiltrar_Click(object sender, EventArgs e)
-        { 
-            SqlConnection conexion = new SqlConnection(cadenaConexion);
-            conexion.Open();
+        //protected void btnFiltrar_Click(object sender, EventArgs e)
+        //{ 
+        //    SqlConnection conexion = new SqlConnection(cadenaConexion);
+        //    conexion.Open();
 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(consultaSql, conexion);
+        //    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(consultaSql, conexion);
+        //    DataSet dataSet = new DataSet();
+        //    sqlDataAdapter.Fill(dataSet, "TablaProductos");
+        //    switch(ddlProducto.SelectedValue)
+        //    {
+        //        case "==":
+        //            for (int i = 0; i < dataSet.Tables["TablaProductos"].Rows.Count; i++)
+        //            {
+        //                if (!(Convert.ToInt32(dataSet.Tables["TablaProductos"].Rows[i]["IdProducto"]) == Convert.ToInt32(txtProducto.Text)))
+        //                {
+        //                    dataSet.Tables["TablaProductos"].Rows[i].Delete();
+        //                }
+        //            }
+
+        //            gvProductos.DataSource = dataSet;
+        //            gvProductos.DataBind();
+        //            break;
+        //        case ">":
+        //            for (int i = 0; i < dataSet.Tables["TablaProductos"].Rows.Count; i++)
+        //            {
+        //                if (!(Convert.ToInt32(dataSet.Tables["TablaProductos"].Rows[i]["IdProducto"]) > Convert.ToInt32(txtProducto.Text)))
+        //                {
+        //                    dataSet.Tables["TablaProductos"].Rows[i].Delete();
+        //                }
+        //            }
+
+        //            gvProductos.DataSource = dataSet;
+        //            gvProductos.DataBind();
+        //            break;
+        //        case "<":
+        //            for (int i = 0; i < dataSet.Tables["TablaProductos"].Rows.Count; i++)
+        //            {
+        //                if (!(Convert.ToInt32(dataSet.Tables["TablaProductos"].Rows[i]["IdProducto"]) < Convert.ToInt32(txtProducto.Text)))
+        //                {
+        //                    dataSet.Tables["TablaProductos"].Rows[i].Delete();
+        //                }
+        //            }
+
+        //            gvProductos.DataSource = dataSet;
+        //            gvProductos.DataBind();
+        //            break;
+        //    }
+        //    conexion.Close();
+        //}
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            string operadorIdProducto = ddlProducto.SelectedValue;
+            string operadorIdCategoria = ddlCategoria.SelectedValue;
+            string consultaFiltrada = consultaSql;
+
+            if(txtProducto.Text != "")
+            {
+                consultaFiltrada += $" WHERE IdProducto {operadorIdProducto} @IdProducto";
+                if(txtCategoria.Text != "")
+                    consultaFiltrada += $" AND IdCategoría {operadorIdCategoria} @IdCategoría";
+            }
+            else if(txtCategoria.Text != "")
+            {
+                consultaFiltrada += $" WHERE IdCategoría {operadorIdCategoria} @IdCategoría";
+            }
+
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(consultaFiltrada, connection);
+            if(txtProducto.Text != "")
+            {
+                command.Parameters.Add("@IdProducto", SqlDbType.Int);
+                command.Parameters["@IdProducto"].Value = Convert.ToInt32(txtProducto.Text);
+            }
+            if (txtCategoria.Text != "")
+            {
+                command.Parameters.Add("@IdCategoría", SqlDbType.Int);
+                command.Parameters["@IdCategoría"].Value = Convert.ToInt32(txtCategoria.Text);
+            }
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet, "TablaProductos");
-           switch(ddlProducto.SelectedValue)
-            {
-                case "==":
-                    for (int i = 0; i < dataSet.Tables["TablaProductos"].Rows.Count; i++)
-                    {
-                        if (!(Convert.ToInt32(dataSet.Tables["TablaProductos"].Rows[i]["IdProducto"]) == Convert.ToInt32(txtProducto.Text)))
-                        {
-                            dataSet.Tables["TablaProductos"].Rows[i].Delete();
-                        }
-                    }
 
-                    gvProductos.DataSource = dataSet;
-                    gvProductos.DataBind();
-                    break;
-                case ">":
-                    for (int i = 0; i < dataSet.Tables["TablaProductos"].Rows.Count; i++)
-                    {
-                        if (!(Convert.ToInt32(dataSet.Tables["TablaProductos"].Rows[i]["IdProducto"]) > Convert.ToInt32(txtProducto.Text)))
-                        {
-                            dataSet.Tables["TablaProductos"].Rows[i].Delete();
-                        }
-                    }
+            gvProductos.DataSource = dataSet.Tables["TablaProductos"];
+            gvProductos.DataBind();
 
-                    gvProductos.DataSource = dataSet;
-                    gvProductos.DataBind();
-                    break;
-                case "<":
-                    for (int i = 0; i < dataSet.Tables["TablaProductos"].Rows.Count; i++)
-                    {
-                        if (!(Convert.ToInt32(dataSet.Tables["TablaProductos"].Rows[i]["IdProducto"]) < Convert.ToInt32(txtProducto.Text)))
-                        {
-                            dataSet.Tables["TablaProductos"].Rows[i].Delete();
-                        }
-                    }
-
-                    gvProductos.DataSource = dataSet;
-                    gvProductos.DataBind();
-                    break;
-            }
-            conexion.Close();
+            connection.Close();
         }
     }
 }

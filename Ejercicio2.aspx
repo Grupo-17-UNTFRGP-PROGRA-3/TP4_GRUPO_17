@@ -83,7 +83,7 @@
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style10">
                         <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="True">
-                            <asp:ListItem Value="==">Igual a:</asp:ListItem>
+                            <asp:ListItem Value="=">Igual a:</asp:ListItem>
                             <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
                             <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                         </asp:DropDownList>
@@ -101,7 +101,7 @@
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style10">
                         <asp:DropDownList ID="ddlCategoria" runat="server">
-                            <asp:ListItem Value="==">Igual a:</asp:ListItem>
+                            <asp:ListItem Value="=">Igual a:</asp:ListItem>
                             <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
                             <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                         </asp:DropDownList>
