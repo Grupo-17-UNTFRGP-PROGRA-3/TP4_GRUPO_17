@@ -14,6 +14,12 @@ namespace TP4_GRUPO_17
         private string cadenaConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=Libreria;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(PreviousPage == null || PreviousPage.FindControl("ddlTemas") == null)
+            {
+                Response.Redirect("Ejercicio3.aspx");
+                return;
+            }
+
             string Seleccionado = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedItem.Value.ToString();
             string consultaSQL = "SELECT * FROM Libros WHERE IdTema = ";
             consultaSQL += Seleccionado;
