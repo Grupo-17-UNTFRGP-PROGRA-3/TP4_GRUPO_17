@@ -130,7 +130,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </td>
                     <td class="auto-style16">
-                        <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar filtro" />
+                        <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar filtro" OnClick="btnQuitarFiltro_Click" />
                     </td>
                     <td class="auto-style16"></td>
                 </tr>

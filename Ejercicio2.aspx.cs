@@ -15,20 +15,12 @@ namespace TP4_GRUPO_17
         //private const string cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True;";
         private const string cadenaConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
         private string consultaSql = "select IdProducto,NombreProducto,IdCategoría,CantidadPorUnidad,PrecioUnidad from Productos";
+        SqlConnection conexion = new SqlConnection(cadenaConexion);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                SqlConnection conexion = new SqlConnection(cadenaConexion);
-                conexion.Open();
-
-                SqlCommand command = new SqlCommand(consultaSql, conexion);
-                SqlDataReader reader = command.ExecuteReader();
-
-                gvProductos.DataSource = reader;
-                gvProductos.DataBind();
-
-                conexion.Close();
+                cargaInicial();
             }
 
         }
@@ -124,6 +116,27 @@ namespace TP4_GRUPO_17
             gvProductos.DataBind();
 
             connection.Close();
+        }
+
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            cargaInicial();
+            txtCategoria.Text = "";
+            txtProducto.Text = "";
+            ddlCategoria.SelectedIndex = 0;
+            ddlProducto.SelectedIndex = 0;
+        }
+        private void cargaInicial()
+        {
+            conexion.Open();
+
+            SqlCommand command = new SqlCommand(consultaSql, conexion);
+            SqlDataReader reader = command.ExecuteReader();
+
+            gvProductos.DataSource = reader;
+            gvProductos.DataBind();
+
+            conexion.Close();
         }
     }
 }
