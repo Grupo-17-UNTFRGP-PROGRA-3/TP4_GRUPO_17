@@ -60,7 +60,7 @@
             <a href="Ejercicio1.aspx">Ejercicio 1</a> |
             <a href="Ejercicio2.aspx">Ejercicio 2</a> |
             <a href="Ejercicio3.aspx">Ejercicio 3</a>
-            </p>
+           </p>
         </nav>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ejercicio 2</h2>
 

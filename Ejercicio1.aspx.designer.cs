@@ -33,6 +33,15 @@ namespace TP4_GRUPO_17
         protected global::System.Web.UI.WebControls.DropDownList ddlProvinciasInicio;
 
         /// <summary>
+        /// Control imgProvInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgProvInicio;
+
+        /// <summary>
         /// Control ddlLocalidadesInicio.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace TP4_GRUPO_17
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProvinciasDestino;
+
+        /// <summary>
+        /// Control imgProvDestino.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgProvDestino;
 
         /// <summary>
         /// Control ddlLocalidadesDestino.

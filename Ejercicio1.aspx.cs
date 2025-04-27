@@ -35,10 +35,10 @@ namespace TP4_GRUPO_17
                 ddlProvinciasInicio.DataBind();
 
                 connection.Close();
-
                 ActualizarLocalidadesInicio();
                 ActualizarProvinciasDestino();
                 ActualizarLocalidadesDestino();
+                cargarImagen();
                
 
             }
@@ -48,7 +48,8 @@ namespace TP4_GRUPO_17
         {
             ActualizarLocalidadesInicio();
             ActualizarProvinciasDestino();
-           
+            cargarImagen();
+
 
         }
 
@@ -92,6 +93,7 @@ namespace TP4_GRUPO_17
                 }
             }
             ActualizarLocalidadesDestino();
+            cargarImagen();
             connection.Close();
         }
         private void ActualizarLocalidadesDestino()
@@ -120,6 +122,40 @@ namespace TP4_GRUPO_17
         protected void ddlProvinciasDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
             ActualizarLocalidadesDestino();
+            cargarImagen();
+        }
+        private void cargarImagen()
+        {
+            if (ddlProvinciasInicio.SelectedValue == "1")
+            {
+                imgProvInicio.ImageUrl = "~/BuenosAires.jpeg";
+            }
+            else if (ddlProvinciasInicio.SelectedValue == "2")
+            {
+                imgProvInicio.ImageUrl = "~/EntreRios.jpeg";
+                
+            }
+            else if (ddlProvinciasInicio.SelectedValue == "3")
+            {
+                imgProvInicio.ImageUrl = "~/SantaFe.jpeg";
+               
+            }
+
+            if (ddlProvinciasDestino.SelectedValue == "1")
+            {
+                imgProvDestino.ImageUrl = "~/BuenosAires.jpeg";
+                imgProvDestino.DataBind();
+            }
+            else if (ddlProvinciasDestino.SelectedValue == "2")
+            {
+                imgProvDestino.ImageUrl = "~/EntreRios.jpeg";
+                imgProvDestino.DataBind();
+            }
+            else if (ddlProvinciasDestino.SelectedValue == "3")
+            {
+                imgProvDestino.ImageUrl = "~/SantaFe.jpeg";
+                imgProvDestino.DataBind();
+            }
         }
     }
 }
